@@ -1,9 +1,12 @@
 {
   "item.tutorialmod.zircon": "Zircon",
   "item.tutorialmod.raw_zircon": "Raw zircon",
+  "item.tutorialmod.eight_ball": "Eight ball",
+
   "block.tutorialmod.zircon_block": "Block of zircon",
   "block.tutorialmod.zircon_ore": "Zircon ore",
   "block.tutorialmod.deepslate_zircon_ore": "Deepslate zircon ore",
+  "block.tutorialmod.jumpy_block": "Block of zircon",
 
   "_comment": "Creative Tabs",
   "itemGroup.tutorialmodtab": "Tutorial mod"
