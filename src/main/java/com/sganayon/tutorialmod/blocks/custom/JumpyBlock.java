@@ -25,7 +25,7 @@ public class JumpyBlock extends Block {
      * Client Main && off hand
      */
     @Override
-    public InteractionResult use(BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand hand, BlockHitResult blockHitResult) {
+    public @NotNull InteractionResult use(@NotNull BlockState blockState, Level level, @NotNull BlockPos blockPos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult blockHitResult) {
         if(!level.isClientSide() && hand == InteractionHand.MAIN_HAND){
             chatMessage(player, "Jump on it !");
         }

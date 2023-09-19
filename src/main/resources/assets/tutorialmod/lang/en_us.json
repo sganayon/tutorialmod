@@ -2,6 +2,7 @@
   "item.tutorialmod.zircon": "Zircon",
   "item.tutorialmod.raw_zircon": "Raw zircon",
   "item.tutorialmod.eight_ball": "Eight ball",
+  "item.tutorialmod.eight_ball.hovertext": "From translation file",
 
   "block.tutorialmod.zircon_block": "Block of zircon",
   "block.tutorialmod.zircon_ore": "Zircon ore",
