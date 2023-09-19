@@ -3,12 +3,15 @@
   "item.tutorialmod.raw_zircon": "Raw zircon",
   "item.tutorialmod.eight_ball": "Eight ball",
   "item.tutorialmod.eight_ball.hovertext": "From translation file",
+  "item.tutorialmod.blueberry": "Blueberry",
+  "item.tutorialmod.blueberry_seeds": "Blueberry seeds",
 
   "block.tutorialmod.zircon_block": "Block of zircon",
   "block.tutorialmod.zircon_ore": "Zircon ore",
   "block.tutorialmod.deepslate_zircon_ore": "Deepslate zircon ore",
   "block.tutorialmod.jumpy_block": "Block of zircon",
   "block.tutorialmod.zircon_lamp_block": "Zircon lamp",
+  "block.tutorialmod.blueberry_crop": "Blueberry Crop",
 
   "_comment": "Creative Tabs",
   "itemGroup.tutorialmodtab": "Tutorial mod"
