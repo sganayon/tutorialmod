@@ -16,5 +16,8 @@
   "block.tutorialmod.blueberry_crop": "Blueberry Crop",
 
   "_comment": "Creative Tabs",
-  "itemGroup.tutorialmodtab": "Tutorial mod"
+  "itemGroup.tutorialmodtab": "Tutorial mod",
+
+  "key.category.tutorialmod.tutorial": "Tutorial mod",
+  "key.tutorialmod.drink_water": "Drink water"
 }
