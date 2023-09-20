@@ -16,7 +16,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
-// EP 11 (10, 11 skipped)
+// EP 11 (10, 11 skipped, see 13 for villagers changes)
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(TutorialMod.MODID)
 public class TutorialMod {
@@ -46,7 +46,6 @@ public class TutorialMod {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            ItemBlockRenderTypes.setRenderLayer(ModBlocks.BLUEBERRY_CROP.get(), RenderType.cutout());
         }
     }
 }
