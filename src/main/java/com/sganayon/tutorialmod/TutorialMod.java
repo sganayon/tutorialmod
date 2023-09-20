@@ -3,6 +3,8 @@ package com.sganayon.tutorialmod;
 import com.mojang.logging.LogUtils;
 import com.sganayon.tutorialmod.blocks.ModBlocks;
 import com.sganayon.tutorialmod.items.ModItems;
+import com.sganayon.tutorialmod.world.feature.ModConfiguredFeatures;
+import com.sganayon.tutorialmod.world.feature.ModPlacedFeatures;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.common.MinecraftForge;
@@ -14,7 +16,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
-// EP 9
+// EP 11 (10, 11 skipped)
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(TutorialMod.MODID)
 public class TutorialMod {
@@ -26,6 +28,8 @@ public class TutorialMod {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModConfiguredFeatures.register(modEventBus);
+        ModPlacedFeatures.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
