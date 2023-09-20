@@ -1,6 +1,9 @@
 package com.sganayon.tutorialmod.event;
 
 import com.sganayon.tutorialmod.TutorialMod;
+import com.sganayon.tutorialmod.networking.ModMessages;
+import com.sganayon.tutorialmod.networking.packet.DrinkWaterC2SPacket;
+import com.sganayon.tutorialmod.networking.packet.ExampleC2SPacket;
 import com.sganayon.tutorialmod.util.KeyBinding;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
@@ -17,7 +20,7 @@ public class ClientEvents {
         @SubscribeEvent
         public static void onKeyInput(InputEvent.Key event){
             if(KeyBinding.DRINKING_KEY.consumeClick()){
-                Minecraft.getInstance().player.sendSystemMessage(Component.literal("Ahhh refreshing"));
+                ModMessages.sendToServer(new DrinkWaterC2SPacket());
             }
         }
     }

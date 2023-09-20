@@ -19,5 +19,7 @@
   "itemGroup.tutorialmodtab": "Tutorial mod",
 
   "key.category.tutorialmod.tutorial": "Tutorial mod",
-  "key.tutorialmod.drink_water": "Drink water"
+  "key.tutorialmod.drink_water": "Drink water",
+  "message.tutorialmod.drink_water": "Drank water",
+  "message.tutorialmod.no_water": "There is no water to drink"
 }
