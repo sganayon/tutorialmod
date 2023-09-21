@@ -1,6 +1,7 @@
 package com.sganayon.tutorialmod.event;
 
 import com.sganayon.tutorialmod.TutorialMod;
+import com.sganayon.tutorialmod.client.ThirstHudOverlay;
 import com.sganayon.tutorialmod.networking.ModMessages;
 import com.sganayon.tutorialmod.networking.packet.DrinkWaterC2SPacket;
 import com.sganayon.tutorialmod.networking.packet.ExampleC2SPacket;
@@ -9,6 +10,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.InputEvent;
+import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
 import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -31,5 +33,11 @@ public class ClientEvents {
         public static void onKeyRegister(RegisterKeyMappingsEvent event){
             event.register(KeyBinding.DRINKING_KEY);
         }
+
+        @SubscribeEvent
+        public static void registerHuiOverlays(RegisterGuiOverlaysEvent event){
+            event.registerAboveAll("thirst", ThirstHudOverlay.HUD_THIRST);
+        }
+
     }
 }

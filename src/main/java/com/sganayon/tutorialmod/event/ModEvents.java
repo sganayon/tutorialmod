@@ -1,15 +1,19 @@
 package com.sganayon.tutorialmod.event;
 
 import com.sganayon.tutorialmod.TutorialMod;
+import com.sganayon.tutorialmod.networking.ModMessages;
+import com.sganayon.tutorialmod.networking.packet.ThirstDataSyncS2CPacket;
 import com.sganayon.tutorialmod.thirst.PlayerThirst;
 import com.sganayon.tutorialmod.thirst.PlayerThirstProvider;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.LogicalSide;
@@ -48,9 +52,21 @@ public class ModEvents {
             event.player.getCapability(PlayerThirstProvider.PLAYER_THIRST).ifPresent(thirst -> {
                 if(thirst.getThirst() > 0 && event.player.getRandom().nextFloat() < 0.005f) { // Once Every 10 Seconds on Avg
                     thirst.subThirst(1);
-                    event.player.sendSystemMessage(Component.literal("Subtracted Thirst"));
+                    ModMessages.sendToPlayer(new ThirstDataSyncS2CPacket(thirst.getThirst()), (ServerPlayer) event.player);
                 }
             });
+        }
+    }
+
+
+    @SubscribeEvent
+    public static void onPlayerJoinWorld(EntityJoinLevelEvent event) {
+        if(!event.getLevel().isClientSide()) {
+            if(event.getEntity() instanceof ServerPlayer player) {
+                player.getCapability(PlayerThirstProvider.PLAYER_THIRST).ifPresent(thirst -> {
+                    ModMessages.sendToPlayer(new ThirstDataSyncS2CPacket(thirst.getThirst()), player);
+                });
+            }
         }
     }
 }

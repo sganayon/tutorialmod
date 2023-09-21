@@ -1,5 +1,6 @@
 package com.sganayon.tutorialmod.networking.packet;
 
+import com.sganayon.tutorialmod.networking.ModMessages;
 import com.sganayon.tutorialmod.thirst.PlayerThirstProvider;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
@@ -56,6 +57,7 @@ public class DrinkWaterC2SPacket {
                             Component.literal("Current thirst %s".formatted(playerThirst.getThirst()))
                                     .withStyle(ChatFormatting.DARK_GRAY)
                     );
+                    ModMessages.sendToPlayer(new ThirstDataSyncS2CPacket(playerThirst.getThirst()), player);
                 });
             } else {
                 player.sendSystemMessage(

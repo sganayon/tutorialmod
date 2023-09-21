@@ -15,7 +15,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
-// EP 15 (10, 11 skipped, see 13 for villagers changes)
+// EP 17 (10, 11 skipped, see 13 for villagers changes)
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(TutorialMod.MODID)
 public class TutorialMod {
