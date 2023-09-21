@@ -1,5 +1,6 @@
 package com.sganayon.tutorialmod.networking.packet;
 
+import com.sganayon.tutorialmod.thirst.PlayerThirstProvider;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
@@ -49,7 +50,13 @@ public class DrinkWaterC2SPacket {
 
                 level.playSound(null, player.getOnPos(), SoundEvents.GENERIC_DRINK, SoundSource.PLAYERS, 0.5F, level.random.nextFloat() * 0.1F + 0.9F);
 
-
+                player.getCapability(PlayerThirstProvider.PLAYER_THIRST).ifPresent(playerThirst -> {
+                    playerThirst.addThirst(1);
+                    player.sendSystemMessage(
+                            Component.literal("Current thirst %s".formatted(playerThirst.getThirst()))
+                                    .withStyle(ChatFormatting.DARK_GRAY)
+                    );
+                });
             } else {
                 player.sendSystemMessage(
                         Component.translatable(MESSAGE_NO_WATER)
