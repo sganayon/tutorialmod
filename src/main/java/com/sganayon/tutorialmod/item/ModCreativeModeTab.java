@@ -1,4 +1,4 @@
-package com.sganayon.tutorialmod.items;
+package com.sganayon.tutorialmod.item;
 
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;

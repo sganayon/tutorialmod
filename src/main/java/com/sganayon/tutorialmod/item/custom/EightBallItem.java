@@ -1,4 +1,4 @@
-package com.sganayon.tutorialmod.items.custom;
+package com.sganayon.tutorialmod.item.custom;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;

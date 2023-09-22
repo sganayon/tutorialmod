@@ -1,6 +1,6 @@
-package com.sganayon.tutorialmod.blocks.custom;
+package com.sganayon.tutorialmod.block.custom;
 
-import com.sganayon.tutorialmod.items.ModItems;
+import com.sganayon.tutorialmod.item.ModItems;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;

@@ -1,11 +1,15 @@
 package com.sganayon.tutorialmod;
 
 import com.mojang.logging.LogUtils;
-import com.sganayon.tutorialmod.blocks.ModBlocks;
-import com.sganayon.tutorialmod.items.ModItems;
+import com.sganayon.tutorialmod.block.ModBlocks;
+import com.sganayon.tutorialmod.fluid.ModFluidTypes;
+import com.sganayon.tutorialmod.fluid.ModFluids;
+import com.sganayon.tutorialmod.item.ModItems;
 import com.sganayon.tutorialmod.networking.ModMessages;
 import com.sganayon.tutorialmod.world.feature.ModConfiguredFeatures;
 import com.sganayon.tutorialmod.world.feature.ModPlacedFeatures;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -15,7 +19,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
-// EP 17 (10, 11 skipped, see 13 for villagers changes)
+// EP 19 (10, 11 skipped, see 13 for villagers changes)
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(TutorialMod.MODID)
 public class TutorialMod {
@@ -27,8 +31,12 @@ public class TutorialMod {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+
         ModConfiguredFeatures.register(modEventBus);
         ModPlacedFeatures.register(modEventBus);
+
+        ModFluids.register(modEventBus);
+        ModFluidTypes.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -47,6 +55,8 @@ public class TutorialMod {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_SOAP_WATER.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_SOAP_WATER.get(), RenderType.translucent());
         }
     }
 }

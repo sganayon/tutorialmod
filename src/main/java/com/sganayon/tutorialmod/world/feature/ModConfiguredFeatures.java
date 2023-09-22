@@ -2,13 +2,12 @@ package com.sganayon.tutorialmod.world.feature;
 
 import com.google.common.base.Suppliers;
 import com.sganayon.tutorialmod.TutorialMod;
-import com.sganayon.tutorialmod.blocks.ModBlocks;
+import com.sganayon.tutorialmod.block.ModBlocks;
 import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.features.OreFeatures;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraftforge.eventbus.api.IEventBus;

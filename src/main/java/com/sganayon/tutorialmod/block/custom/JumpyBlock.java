@@ -1,4 +1,4 @@
-package com.sganayon.tutorialmod.blocks.custom;
+package com.sganayon.tutorialmod.block.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;

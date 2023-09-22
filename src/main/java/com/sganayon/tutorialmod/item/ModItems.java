@@ -1,12 +1,14 @@
-package com.sganayon.tutorialmod.items;
+package com.sganayon.tutorialmod.item;
 
 import com.sganayon.tutorialmod.TutorialMod;
-import com.sganayon.tutorialmod.blocks.ModBlocks;
-import com.sganayon.tutorialmod.items.custom.EightBallItem;
+import com.sganayon.tutorialmod.block.ModBlocks;
+import com.sganayon.tutorialmod.fluid.ModFluids;
+import com.sganayon.tutorialmod.item.custom.EightBallItem;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraft.world.item.Items;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -24,6 +26,14 @@ public class ModItems {
                 .tab(ModCreativeModeTab.TUTORIAL_TAB)
                 .stacksTo(64)
                 .food(new FoodProperties.Builder().nutrition(2).saturationMod(2).build())
+    ));
+
+    public static final RegistryObject<Item> SOAP_WATER_BUCKET = ITEMS.register("soap_water_bucket", () -> new BucketItem(
+            ModFluids.SOURCE_SOAP_WATER,
+            new Item.Properties()
+                    .tab(ModCreativeModeTab.TUTORIAL_TAB)
+                    .craftRemainder(Items.BUCKET)
+                    .stacksTo(1)
     ));
 
 

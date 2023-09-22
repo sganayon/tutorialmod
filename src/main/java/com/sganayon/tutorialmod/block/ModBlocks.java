@@ -1,11 +1,12 @@
-package com.sganayon.tutorialmod.blocks;
+package com.sganayon.tutorialmod.block;
 
 import com.sganayon.tutorialmod.TutorialMod;
-import com.sganayon.tutorialmod.blocks.custom.BlueberryCropBlock;
-import com.sganayon.tutorialmod.blocks.custom.JumpyBlock;
-import com.sganayon.tutorialmod.blocks.custom.ZirconLampBlock;
-import com.sganayon.tutorialmod.items.ModCreativeModeTab;
-import com.sganayon.tutorialmod.items.ModItems;
+import com.sganayon.tutorialmod.block.custom.BlueberryCropBlock;
+import com.sganayon.tutorialmod.block.custom.JumpyBlock;
+import com.sganayon.tutorialmod.block.custom.ZirconLampBlock;
+import com.sganayon.tutorialmod.fluid.ModFluids;
+import com.sganayon.tutorialmod.item.ModCreativeModeTab;
+import com.sganayon.tutorialmod.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -13,6 +14,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DropExperienceBlock;
+import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -76,6 +78,13 @@ public class ModBlocks {
             "blueberry_crop",
             () -> new BlueberryCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT))
     );
+
+    public static final RegistryObject<LiquidBlock> SOAP_WATER_BLOCK = BLOCKS.register(
+            "soap_water_block",
+            () -> new LiquidBlock(ModFluids.SOURCE_SOAP_WATER, BlockBehaviour.Properties.copy(Blocks.WATER))
+    );
+
+
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab){
         RegistryObject<T> blockRegistery = BLOCKS.register(name, block);
