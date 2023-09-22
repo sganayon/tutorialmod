@@ -2,6 +2,7 @@ package com.sganayon.tutorialmod.block;
 
 import com.sganayon.tutorialmod.TutorialMod;
 import com.sganayon.tutorialmod.block.custom.BlueberryCropBlock;
+import com.sganayon.tutorialmod.block.custom.GemInfusingStationBlock;
 import com.sganayon.tutorialmod.block.custom.JumpyBlock;
 import com.sganayon.tutorialmod.block.custom.ZirconLampBlock;
 import com.sganayon.tutorialmod.fluid.ModFluids;
@@ -82,6 +83,16 @@ public class ModBlocks {
     public static final RegistryObject<LiquidBlock> SOAP_WATER_BLOCK = BLOCKS.register(
             "soap_water_block",
             () -> new LiquidBlock(ModFluids.SOURCE_SOAP_WATER, BlockBehaviour.Properties.copy(Blocks.WATER))
+    );
+
+    public static final RegistryObject<Block> GEM_INFUSING_STATION = registerBlock(
+            "gem_infusing_station",
+            () -> new GemInfusingStationBlock(BlockBehaviour.Properties.of(Material.METAL)
+                    .strength(6f)
+                    .requiresCorrectToolForDrops()
+                    .noOcclusion()
+            ),
+            ModCreativeModeTab.TUTORIAL_TAB
     );
 
 

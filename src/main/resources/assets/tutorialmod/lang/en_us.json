@@ -16,6 +16,7 @@
   "block.tutorialmod.jumpy_block": "Block of zircon",
   "block.tutorialmod.zircon_lamp_block": "Zircon lamp",
   "block.tutorialmod.blueberry_crop": "Blueberry Crop",
+  "block.tutorialmod.gem_infusing_station": "Gem infusing station",
 
   "_comment": "Creative Tabs",
   "itemGroup.tutorialmodtab": "Tutorial mod",

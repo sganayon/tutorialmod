@@ -20,7 +20,7 @@ public class ModFluidTypes {
 
     public static final RegistryObject<FluidType> SOAP_WATER_FLUID_TYPE = register("soap_water_fluid",
             FluidType.Properties.create()
-                    .lightLevel(2).density(15).viscosity(5)
+                    .lightLevel(2).density(15).viscosity(5).canDrown(true).canExtinguish(true).canPushEntity(true)
                     .sound(SoundAction.get("drink"), SoundEvents.HONEY_DRINK)
     );
 
